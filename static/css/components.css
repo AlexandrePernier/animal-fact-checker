@@ -1,0 +1,160 @@
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card.correct {
+    background: #d4edda;
+    transform: scale(1.05);
+}
+
+.card.wrong {
+    background: #f8d7da;
+    animation: shake 0.3s;
+}
+
+/* Image */
+#animal-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#game-over .btn {
+    flex: none;
+    width: 220px;
+    font-size: 18px;
+}
+
+#leaderboard-screen .btn {
+    flex: none;
+    width: 220px;
+    font-size: 18px;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.true {
+    background: #28a745;
+    color: white;
+}
+
+.false {
+    background: #dc3545;
+    color: white;
+}
+
+/* Score */
+.score-box {
+    margin-top: 10px;
+    color: white;
+    font-size: 18px;
+}
+
+#result {
+    margin-top: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+#streak {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.streak-active {
+    color: #ffeb3b;
+    font-weight: bold;
+}
+
+#lives {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+/* Timer */
+#timer-bar {
+    height: 100%;
+    width: 100%;
+    background: #00ffcc;
+    transition: width linear;
+}
+
+/* Leaderboard item */
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: white;
+    color: #333;
+
+    padding: 12px 15px;
+    margin: 8px 0;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+.rank {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.name {
+    flex: 1;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.score {
+    font-weight: bold;
+}
+
+/* podium */
+.first {
+    background: linear-gradient(135deg, gold, #ffd700);
+    color: black;
+    transform: scale(1.05);
+}
+
+.second {
+    background: linear-gradient(135deg, #c0c0c0, #e0e0e0);
+}
+
+.third {
+    background: linear-gradient(135deg, #cd7f32, #e6a15c);
+}

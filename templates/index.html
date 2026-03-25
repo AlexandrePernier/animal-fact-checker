@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Fact Checker</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+
+<body>
+
+    <!-- START SCREEN -->
+    <div id="start-screen">
+        <h1>🦁 Animal Fact Checker</h1>
+        <button id="start-btn">Start Game</button>
+        <button id="leaderboard-btn">Leaderboard</button>
+    </div>
+
+    <!-- GAME -->
+    <div class="game-container hidden" id="game">
+        <h1 class="title">🦁 Animal Fact Checker</h1>
+
+        <div class="card" id="card">
+            <img id="animal-img" src="" alt="">
+            <p id="question">Loading...</p>
+        </div>
+
+        <div class="timer-bar-container">
+            <div id="timer-bar"></div>
+        </div>
+
+        <div class="buttons">
+            <button id="trueBtn" class="btn true">TRUE</button>
+            <button id="falseBtn" class="btn false">FALSE</button>
+        </div>
+
+        <p id="result"></p>
+
+        <div class="score-box">
+            <p id="score">Score: 0</p>
+            <p id="streak">🔥 Streak: 0</p>
+            <p id="lives">❤️❤️❤️</p>
+        </div>
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="game-over" class="hidden">
+        <h2>💀 Game Over</h2>
+        <p id="final-score"></p>
+        <button id="restart-btn" class="btn">Restart</button>
+        <button id="view-leaderboard-btn" class="btn">View Leaderboard</button>
+    </div>
+
+    <!-- LEADERBOARD -->
+    <div id="leaderboard-screen" class="hidden">
+        <h2>🏆 Leaderboard</h2>
+        <div id="leaderboard-list" class="leaderboard"></div>
+        <button id="back-btn" class="btn">Back</button>
+    </div>
+
+    <script type="module" src="/static/js/main.js"></script>
+
+</body>
+
+</html>

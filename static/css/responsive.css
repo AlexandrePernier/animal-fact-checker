@@ -1,0 +1,54 @@
+@media (max-width: 600px) {
+
+    .game-container {
+        max-width: 95%;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .card {
+        font-size: 20px;
+        padding: 25px;
+    }
+
+    #animal-img {
+        max-height: 250px;
+    }
+
+    .btn {
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    #result {
+        font-size: 18px;
+    }
+
+    .score-box {
+        font-size: 20px;
+    }
+
+    #lives {
+        font-size: 24px;
+    }
+
+    #game-over h2 {
+        font-size: 50px;
+    }
+
+    #game-over button {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+
+    #start-screen h1 {
+        font-size: 32px;
+    }
+
+    #start-screen button {
+        font-size: 20px;
+        padding: 18px 35px;
+    }
+}
