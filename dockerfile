@@ -10,14 +10,3 @@ COPY . .
 EXPOSE 5000
 
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
-```
-
-**`.dockerignore`** à la racine :
-```
-.env
-__pycache__/
-*.pyc
-*.db
-.git
-venv/
-instance/
