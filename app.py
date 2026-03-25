@@ -18,14 +18,7 @@ db.init_app(app)
 app.secret_key = os.getenv("SECRET_KEY")
 with app.app_context():
     db.create_all()
-
-API_KEY = os.getenv("API_KEY")
-
-# 🔐 Sécurité : vérifier que la clé existe
-if not API_KEY:
-    raise ValueError("API_KEY not found. Check your .env file.")
-
-
+    
 with open("animals.json") as f:
     animal_cache = json.load(f)
 
