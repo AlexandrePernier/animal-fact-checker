@@ -57,7 +57,8 @@ def get_clean_max(raw_value):
     if not numbers:
         return raw_value
 
-    unit_match = re.search(r'\d+\s*([a-zA-Z]+)', clean)
+    # Cherche l'unité = dernier mot alphabétique de la chaîne
+    unit_match = re.search(r'([a-zA-Z]+)\s*$', clean.strip())
     unit = unit_match.group(1) if unit_match else ""
 
     return f"{max(numbers)} {unit}".strip()
