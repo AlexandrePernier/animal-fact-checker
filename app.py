@@ -115,7 +115,7 @@ def question():
         return jsonify({"error": "API error"}), 500
 
     charac = data.get('characteristics', {})
-    possible = [c for c in ['lifespan', 'weight', 'diet'] if c in charac]
+    possible = [c for c in ['lifespan', 'weight', 'diet', 'top_speed', 'length', 'height'] if c in charac]
 
     if not possible:
         logger.warning(f"Animal '{data.get('name')}' has no usable characteristics")
