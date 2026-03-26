@@ -1,5 +1,7 @@
 # 🐾 Animal Fact Checker
 
+![Tests](https://github.com/AlexandrePernier/animal-fact-checker/actions/workflows/test.yml/badge.svg)
+
 A web-based quiz game where players must determine whether animal facts are true or false. Test your knowledge of the animal kingdom across lifespan, weight, and diet — with a streak system and global leaderboard.
 
 🔗 **[Play now](https://animal-fact-checker.onrender.com/)**
