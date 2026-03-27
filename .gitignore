@@ -4,4 +4,3 @@ __pycache__/
 *.db
 venv/
 instance/
-data_generation.py
