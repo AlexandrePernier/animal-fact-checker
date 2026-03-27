@@ -1,5 +1,5 @@
 import pytest
-from app import app, get_clean_max, modify_value
+from app import app, modify_value, FIELD_CONFIG
 
 
 # ─────────────────────────────────────────
@@ -20,7 +20,6 @@ def client():
 
 
 def start_game(client, username="TestUser"):
-    """Helper : démarre une partie et retourne le client avec session active."""
     client.post("/start", json={"username": username})
     return client
 
@@ -39,6 +38,12 @@ def test_start_without_username(client):
     res = client.post("/start", json={})
     assert res.status_code == 400
     assert "error" in res.get_json()
+
+
+def test_start_initializes_session(client):
+    """La session doit être correctement initialisée après /start."""
+    res = client.post("/start", json={"username": "Alex"})
+    assert res.status_code == 200
 
 
 # ─────────────────────────────────────────
@@ -94,9 +99,7 @@ def test_answer_streak_bonus_3(client):
         sess["lives"] = 3
 
     res = client.post("/answer", json={"answer": True})
-    data = res.get_json()
-
-    assert data["score"] == 2
+    assert res.get_json()["score"] == 2
 
 
 def test_answer_streak_bonus_5(client):
@@ -111,13 +114,10 @@ def test_answer_streak_bonus_5(client):
         sess["lives"] = 3
 
     res = client.post("/answer", json={"answer": True})
-    data = res.get_json()
-
-    assert data["score"] == 3
+    assert res.get_json()["score"] == 3
 
 
 def test_answer_game_over(client):
-    """Répondre sans vies restantes retourne une erreur."""
     start_game(client)
 
     with client.session_transaction() as sess:
@@ -128,12 +128,10 @@ def test_answer_game_over(client):
 
 
 def test_answer_no_question(client):
-    """Répondre sans question active retourne une erreur."""
     start_game(client)
 
     with client.session_transaction() as sess:
         sess["lives"] = 3
-        # Pas de correct_answer en session
 
     res = client.post("/answer", json={"answer": True})
     assert res.status_code == 400
@@ -152,7 +150,6 @@ def test_leaderboard_empty(client):
 
 
 def test_leaderboard_returns_max_10(client):
-    """Le leaderboard ne retourne jamais plus de 10 scores."""
     from models import db, Score
     with app.app_context():
         for i in range(15):
@@ -160,8 +157,7 @@ def test_leaderboard_returns_max_10(client):
         db.session.commit()
 
     res = client.get("/leaderboard")
-    data = res.get_json()
-    assert len(data["top10"]) <= 10
+    assert len(res.get_json()["top10"]) <= 10
 
 
 # ─────────────────────────────────────────
@@ -175,38 +171,74 @@ def test_submit_score_without_session(client):
 
 
 # ─────────────────────────────────────────
-# Tests fonctions utilitaires
+# Tests /question
 # ─────────────────────────────────────────
 
-def test_get_clean_max_simple():
-    assert get_clean_max("10 years") == "10 years"
+def test_question_returns_200(client):
+    start_game(client)
+    res = client.get("/question")
+    assert res.status_code == 200
 
 
-def test_get_clean_max_range():
-    """Doit retourner le max d'une plage de valeurs."""
-    result = get_clean_max("5 to 10 years")
-    assert result == "10 years"
+def test_question_response_structure(client):
+    """La réponse de /question doit avoir les bons champs."""
+    start_game(client)
+    res = client.get("/question")
+    data = res.get_json()
+    assert "question" in data
+    assert "real" in data
+    assert "display" in data
+    assert "image" in data
 
 
-def test_get_clean_max_with_parentheses():
-    """Les parenthèses doivent être ignorées."""
-    result = get_clean_max("10 years (in captivity 20)")
-    assert result == "10 years"
-
-
-def test_get_clean_max_no_numbers():
-    """Sans chiffre, retourne la valeur brute."""
-    assert get_clean_max("unknown") == "unknown"
-
+# ─────────────────────────────────────────
+# Tests modify_value
+# ─────────────────────────────────────────
 
 def test_modify_value_diet():
-    """Le régime modifié doit être différent du vrai."""
     result = modify_value("diet", "Carnivore")
     assert result != "Carnivore"
-    assert result in ["Herbivore", "Omnivore", "Insectivore"]
+    assert result in FIELD_CONFIG["diet"]["options"]
+
+
+def test_modify_value_skin_type():
+    result = modify_value("skin_type", "Fur")
+    assert result != "Fur"
+    assert result in FIELD_CONFIG["skin_type"]["options"]
+
+
+def test_modify_value_lifestyle():
+    result = modify_value("lifestyle", "Nocturnal")
+    assert result != "Nocturnal"
+    assert result in FIELD_CONFIG["lifestyle"]["options"]
 
 
 def test_modify_value_numeric():
-    """La valeur numérique modifiée doit être différente de l'originale."""
-    result = modify_value("weight", "100 kg")
-    assert result != "100"
+    result = modify_value("weight_kg", 100)
+    assert result != 100
+    assert result > 0
+
+
+def test_modify_value_numeric_always_positive():
+    for _ in range(20):
+        result = modify_value("lifespan_years", 5)
+        assert result > 0
+
+
+# ─────────────────────────────────────────
+# Tests FIELD_CONFIG
+# ─────────────────────────────────────────
+
+def test_field_config_text_fields_have_options():
+    """Tous les champs texte doivent avoir des options."""
+    for field, config in FIELD_CONFIG.items():
+        if config["type"] == "text":
+            assert "options" in config, f"{field} missing options"
+            assert len(config["options"]) >= 2, f"{field} needs at least 2 options"
+
+
+def test_field_config_number_fields_have_unit():
+    """Tous les champs numériques doivent avoir une unité."""
+    for field, config in FIELD_CONFIG.items():
+        if config["type"] == "number":
+            assert "unit" in config, f"{field} missing unit"

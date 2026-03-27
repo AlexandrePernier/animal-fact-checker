@@ -1,13 +1,11 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request, session
 import random
-import re
 import os
 import json
 import logging
 from dotenv import load_dotenv
 from config import Config
 from models import db, Score
-from flask import request, session
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
@@ -55,46 +53,46 @@ with open("animals.json") as f:
     animal_cache = json.load(f)
     logger.info(f"Loaded {len(animal_cache)} animals from cache")
 
+# Champs exploitables et leurs unités d'affichage
+FIELD_CONFIG = {
+    "diet":           {"label": "diet",         "unit": "", "type": "text",
+                       "options": ["Carnivore", "Herbivore", "Omnivore", "Insectivore"]},
+    "skin_type":      {"label": "skin type",    "unit": "", "type": "text",
+                       "options": ["Fur", "Feathers", "Scales", "Shell", "Hair", "Smooth", "Spikes", "Leather"]},
+    "habitat":        {"label": "habitat",      "unit": "", "type": "text",
+                       "options": ["Forest", "Ocean", "Desert", "Grassland", "Rainforest", "Tundra", "Savannah", "Mountains"]},
+    "group_behavior": {"label": "group behavior","unit": "", "type": "text",
+                       "options": ["Solitary", "Herd", "Pack", "Pride", "Colony", "Flock", "Troop"]},
+    "lifestyle":      {"label": "lifestyle",    "unit": "", "type": "text",
+                       "options": ["Nocturnal", "Diurnal", "Crepuscular"]},
+    "animal_type":    {"label": "type",         "unit": "", "type": "text",
+                       "options": ["Mammal", "Bird", "Reptile", "Fish", "Amphibian", "Insect", "Arachnid"]},
+    "lifespan_years": {"label": "lifespan",     "unit": "years", "type": "number"},
+    "weight_kg":      {"label": "weight",       "unit": "kg",    "type": "number"},
+    "top_speed_mph":  {"label": "top speed",    "unit": "km/h",  "type": "number"},
+    "length_cm":      {"label": "length",       "unit": "cm",    "type": "number"},
+    "height_cm":      {"label": "height",       "unit": "cm",    "type": "number"},
+}
 
-def get_animal():
-    return random.choice(animal_cache)
+DIET_OPTIONS = ["Carnivore", "Herbivore", "Omnivore", "Insectivore"]
 
 
-def modify_value(category, real_value):
-    if category == 'diet':
-        options = ["Carnivore", "Herbivore", "Omnivore", "Insectivore"]
-        if real_value in options:
-            options.remove(real_value)
-        return random.choice(options)
+def modify_value(field, real_value):
+    """Génère une valeur fausse mais crédible."""
+    config = FIELD_CONFIG.get(field, {})
 
-    clean_value = re.sub(r'\(.*\)', '', real_value)
-    numbers = [int(n) for n in re.findall(r'\d+', clean_value)]
-
-    if not numbers:
-        return real_value
-
-    max_val = max(numbers)
+    if config.get("type") == "text":
+        options = [o for o in config.get("options", []) if o.lower() != str(real_value).lower()]
+        return random.choice(options) if options else real_value
 
     factor = random.choice([
-        random.uniform(0.5, 0.8),
-        random.uniform(1.2, 1.8)
+        random.uniform(0.4, 0.75),
+        random.uniform(1.3, 2.0)
     ])
-
-    fake_max = int(max_val * factor)
-    return str(fake_max)
-
-
-def get_clean_max(raw_value):
-    clean = re.sub(r'\(.*\)', '', raw_value)
-    numbers = [int(n) for n in re.findall(r'\d+', clean)]
-
-    if not numbers:
-        return raw_value
-
-    unit_match = re.search(r'([a-zA-Z]+)\s*$', clean.strip())
-    unit = unit_match.group(1) if unit_match else ""
-
-    return f"{max(numbers)} {unit}".strip()
+    fake = int(real_value * factor)
+    if fake == real_value:
+        fake = real_value + random.choice([-1, 1]) * max(1, int(real_value * 0.1))
+    return max(1, fake)
 
 
 # ─────────────────────────────────────────
@@ -109,53 +107,53 @@ def index():
 @app.route("/question")
 @limiter.limit("60 per minute")
 def question():
-    data = get_animal()
-    if not data:
-        logger.error("Failed to get animal from cache")
-        return jsonify({"error": "API error"}), 500
+    # Dépile le prochain animal depuis la queue
+    queue = session.get("queue", [])
+    if not queue:
+        # Queue épuisée : on la recharge et mélange à nouveau
+        queue = list(range(len(animal_cache)))
+        random.shuffle(queue)
 
-    charac = data.get('characteristics', {})
-    possible = [c for c in ['lifespan', 'weight', 'diet', 'top_speed', 'length', 'height'] if c in charac]
+    index = queue.pop(0)
+    session["queue"] = queue
+    animal = animal_cache[index]
+
+    possible = [
+            field for field in FIELD_CONFIG
+            if animal.get(field) is not None
+        ]
 
     if not possible:
-        logger.warning(f"Animal '{data.get('name')}' has no usable characteristics")
+        logger.warning(f"Animal '{animal.get('name')}' has no usable fields")
         return jsonify({"error": "No usable data"}), 422
 
-    cat = random.choice(possible)
-    real_val = get_clean_max(charac[cat])
+    field = random.choice(possible)
+    config = FIELD_CONFIG[field]
+    real_value = animal[field]
     is_true = random.choice([True, False])
+    
+    # Conversion mph → km/h pour l'affichage
+    if field == "top_speed_mph":
+        real_value = int(real_value * 1.60934)
 
-    if cat == "diet":
-        display = real_val if is_true else modify_value(cat, real_val)
-        question_text = f"Is the diet of the {data['name']} {display}?"
+    if config["type"] == "text":
+        display = real_value if is_true else modify_value(field, real_value)
+        question_text = f"Is the {config['label']} of the {animal['name']} {display}?"
     else:
-        clean_val = re.sub(r'\(.*\)', '', real_val)
-        numbers = [int(n) for n in re.findall(r'\d+', clean_val)]
-        max_val = max(numbers) if numbers else 0
-
-        unit_match = re.search(r'\d+\s*([a-zA-Z]+)', clean_val)
-        unit = unit_match.group(1) if unit_match else ""
-
-        if is_true:
-            display = f"{max_val} {unit}".strip()
-        else:
-            fake = modify_value(cat, real_val)
-            display = f"{fake} {unit}".strip()
-
-        question_text = f"Is the max {cat} of the {data['name']} {display}?"
-
-    image_url = data.get("image")
+        display = real_value if is_true else modify_value(field, real_value)
+        unit = config["unit"]
+        question_text = f"Is the max {config['label']} of the {animal['name']} {display} {unit}?".strip()
 
     session["correct_answer"] = is_true
-    session["real_value"] = real_val
+    session["real_value"] = f"{real_value} {config['unit']}".strip()
 
-    logger.info(f"Question generated for '{data['name']}' — category: {cat}")
+    logger.info(f"Question — '{animal['name']}' / {field}")
 
     return jsonify({
         "question": question_text,
-        "real": real_val,
-        "display": display,
-        "image": image_url
+        "real": session["real_value"],
+        "display": str(display),
+        "image": animal.get("image")
     })
 
 
@@ -193,7 +191,7 @@ def submit_score():
 @limiter.limit("30 per minute")
 def leaderboard():
     top_scores = Score.query.order_by(Score.score.desc()).limit(10).all()
-    logger.info(f"Leaderboard requested — {len(top_scores)} entries returned")
+    logger.info(f"Leaderboard — {len(top_scores)} entries")
     return jsonify({"top10": [s.to_dict() for s in top_scores]})
 
 
@@ -207,13 +205,18 @@ def start():
         logger.warning("start called without username")
         return jsonify({"error": "Username required"}), 400
 
+    # Mélange tous les animaux et stocke leurs index en session
+    indices = list(range(len(animal_cache)))
+    random.shuffle(indices)
+
     session.clear()
     session["username"] = username
     session["score"] = 0
     session["streak"] = 0
     session["lives"] = 3
+    session["queue"] = indices  # ← queue des animaux à venir
 
-    logger.info(f"Game started for user: {username}")
+    logger.info(f"Game started — user: {username}")
     return jsonify({"message": "Game started"})
 
 
@@ -265,25 +268,25 @@ def answer():
 
 @app.errorhandler(404)
 def not_found(e):
-    logger.warning(f"404 - Route not found: {request.path}")
+    logger.warning(f"404 — {request.path}")
     return jsonify({"error": "Resource not found"}), 404
 
 
 @app.errorhandler(405)
 def method_not_allowed(e):
-    logger.warning(f"405 - Method not allowed: {request.method} {request.path}")
+    logger.warning(f"405 — {request.method} {request.path}")
     return jsonify({"error": "Method not allowed"}), 405
 
 
 @app.errorhandler(429)
 def rate_limit_exceeded(e):
-    logger.warning(f"429 - Rate limit exceeded for {get_remote_address()}")
+    logger.warning(f"429 — Rate limit exceeded for {get_remote_address()}")
     return jsonify({"error": "Too many requests, please slow down"}), 429
 
 
 @app.errorhandler(500)
 def internal_error(e):
-    logger.error(f"500 - Internal server error: {e}")
+    logger.error(f"500 — {e}")
     return jsonify({"error": "Internal server error"}), 500
 
 
