@@ -7,11 +7,6 @@
     "top_speed_mph": 48,
     "length_cm": 213,
     "height_cm": 121,
-    "skin_type": "Hair",
-    "habitat": "plains",
-    "group_behavior": "Pride",
-    "lifestyle": null,
-    "animal_type": "mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Cape_Lion.jpg/330px-Cape_Lion.jpg"
   },
   {
@@ -22,11 +17,6 @@
     "top_speed_mph": 60,
     "length_cm": 330,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Dense tropical forest and mangroves",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Bengal_tiger_in_Sanjay_Dubri_Tiger_Reserve_December_2024_by_Tisha_Mukherjee_11.jpg/330px-Bengal_tiger_in_Sanjay_Dubri_Tiger_Reserve_December_2024_by_Tisha_Mukherjee_11.jpg"
   },
   {
@@ -37,11 +27,6 @@
     "top_speed_mph": 25,
     "length_cm": null,
     "height_cm": 350,
-    "skin_type": "Leather",
-    "habitat": "Forest",
-    "group_behavior": "Herd",
-    "lifestyle": "Diurnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/178_Male_African_bush_elephant_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg/330px-178_Male_African_bush_elephant_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg"
   },
   {
@@ -52,11 +37,6 @@
     "top_speed_mph": 30,
     "length_cm": null,
     "height_cm": 600,
-    "skin_type": "Hair",
-    "habitat": "Open woodland and savannah",
-    "group_behavior": "Herd",
-    "lifestyle": "Diurnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Giraffe_Mikumi_National_Park.jpg/330px-Giraffe_Mikumi_National_Park.jpg"
   },
   {
@@ -67,11 +47,6 @@
     "top_speed_mph": null,
     "length_cm": 275,
     "height_cm": null,
-    "skin_type": "Hair",
-    "habitat": "Open grassland and plains",
-    "group_behavior": "Herd",
-    "lifestyle": "Diurnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Plains_Zebra_Equus_quagga_cropped.jpg/330px-Plains_Zebra_Equus_quagga_cropped.jpg"
   },
   {
@@ -82,11 +57,6 @@
     "top_speed_mph": 70,
     "length_cm": null,
     "height_cm": 136,
-    "skin_type": "Fur",
-    "habitat": "Open grassland",
-    "group_behavior": "Solitary/Pairs",
-    "lifestyle": "Diurnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Male_cheetah_facing_left_in_South_Africa.jpg/330px-Male_cheetah_facing_left_in_South_Africa.jpg"
   },
   {
@@ -97,11 +67,6 @@
     "top_speed_mph": 42,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Hair",
-    "habitat": null,
-    "group_behavior": null,
-    "lifestyle": null,
-    "animal_type": "mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/American_Leopard_Hound.jpg"
   },
   {
@@ -112,11 +77,6 @@
     "top_speed_mph": 50,
     "length_cm": 190,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Rainforest",
-    "group_behavior": "Solitary",
-    "lifestyle": "Crepuscular",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Standing_jaguar.jpg/330px-Standing_jaguar.jpg"
   },
   {
@@ -127,11 +87,6 @@
     "top_speed_mph": 50,
     "length_cm": 160,
     "height_cm": 78,
-    "skin_type": "Hair",
-    "habitat": "Desert",
-    "group_behavior": "Clans",
-    "lifestyle": null,
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Brown_Hyena_%28Hyaena_brunnea%29_leaving_waterhole_..._%2850915531592%29%2C_crop.jpg/330px-Brown_Hyena_%28Hyaena_brunnea%29_leaving_waterhole_..._%2850915531592%29%2C_crop.jpg"
   },
   {
@@ -142,11 +97,6 @@
     "top_speed_mph": null,
     "length_cm": 104,
     "height_cm": 50,
-    "skin_type": "Hair",
-    "habitat": "Savannas and grasslands",
-    "group_behavior": "Solitary",
-    "lifestyle": null,
-    "animal_type": "mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Aardwolf%2C_Buffalo_Springs_National_Park%2C_Kenya_1_%28cropped%29.jpg/330px-Aardwolf%2C_Buffalo_Springs_National_Park%2C_Kenya_1_%28cropped%29.jpg"
   },
   {
@@ -157,11 +107,6 @@
     "top_speed_mph": 25,
     "length_cm": null,
     "height_cm": 190,
-    "skin_type": "Fur",
-    "habitat": "Deciduous Tropical Forest",
-    "group_behavior": "Solitary",
-    "lifestyle": "Nocturnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Ursus_thibetanus_3_%28Wroclaw_zoo%29.JPG/330px-Ursus_thibetanus_3_%28Wroclaw_zoo%29.JPG"
   },
   {
@@ -172,12 +117,7 @@
     "top_speed_mph": 25,
     "length_cm": 250,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Coastal ice fields and floating ice",
-    "group_behavior": "Solitary",
-    "lifestyle": "Diurnal",
-    "animal_type": null,
-    "image": "https://picsum.photos/400/300?random=122"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Grolar.JPG/330px-Grolar.JPG"
   },
   {
     "name": "Grizzly Bear",
@@ -187,11 +127,6 @@
     "top_speed_mph": 35,
     "length_cm": null,
     "height_cm": 300,
-    "skin_type": "Fur",
-    "habitat": "Forest and mountainous regions",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/GrizzlyBearJeanBeaufort.jpg/330px-GrizzlyBearJeanBeaufort.jpg"
   },
   {
@@ -202,11 +137,6 @@
     "top_speed_mph": 20,
     "length_cm": null,
     "height_cm": 180,
-    "skin_type": "Fur",
-    "habitat": "High-altitude",
-    "group_behavior": "Solitary",
-    "lifestyle": "Diurnal/Nocturnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/330px-Grosser_Panda.JPG"
   },
   {
@@ -217,12 +147,7 @@
     "top_speed_mph": 24,
     "length_cm": 120,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "High-altitude mountain forest",
-    "group_behavior": "Solitary",
-    "lifestyle": "Nocturnal",
-    "animal_type": null,
-    "image": "https://picsum.photos/400/300?random=589"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Red_Panda%2C_Gentle_Tree-Dweller_of_the_Himalayas.jpg/330px-Red_Panda%2C_Gentle_Tree-Dweller_of_the_Himalayas.jpg"
   },
   {
     "name": "Koala",
@@ -232,11 +157,6 @@
     "top_speed_mph": 2,
     "length_cm": null,
     "height_cm": 85,
-    "skin_type": "Fur",
-    "habitat": "Eucalyptus",
-    "group_behavior": "Solitary",
-    "lifestyle": "Nocturnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Koala_climbing_tree.jpg/330px-Koala_climbing_tree.jpg"
   },
   {
@@ -247,11 +167,6 @@
     "top_speed_mph": 35,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Dry forests",
-    "group_behavior": null,
-    "lifestyle": "Sociable",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Forester_kangaroo_%28Macropus_giganteus_tasmaniensis%29_juvenile_hopping_Esk_Valley.jpg/330px-Forester_kangaroo_%28Macropus_giganteus_tasmaniensis%29_juvenile_hopping_Esk_Valley.jpg"
   },
   {
@@ -262,11 +177,6 @@
     "top_speed_mph": 30,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Forest and shrubland",
-    "group_behavior": null,
-    "lifestyle": "Herd",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Red_necked_wallaby444.jpg/330px-Red_necked_wallaby444.jpg"
   },
   {
@@ -277,11 +187,6 @@
     "top_speed_mph": 15,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Tall trees in tropical rainforest",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Bicho-pregui%C3%A7a_3.jpg/330px-Bicho-pregui%C3%A7a_3.jpg"
   },
   {
@@ -292,11 +197,6 @@
     "top_speed_mph": 25,
     "length_cm": null,
     "height_cm": 170,
-    "skin_type": "Hair",
-    "habitat": "Tropical forest and woody savanna",
-    "group_behavior": "Group",
-    "lifestyle": "Diurnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/015_Chimpanzee_at_Kibale_forest_National_Park_Photo_by_Giles_Laurent.jpg/330px-015_Chimpanzee_at_Kibale_forest_National_Park_Photo_by_Giles_Laurent.jpg"
   },
   {
@@ -307,11 +207,6 @@
     "top_speed_mph": 25,
     "length_cm": null,
     "height_cm": 170,
-    "skin_type": "Hair",
-    "habitat": "Rainforest and dense jungle",
-    "group_behavior": null,
-    "lifestyle": "Troop",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Cross_river_gorilla.jpg/330px-Cross_river_gorilla.jpg"
   },
   {
@@ -322,11 +217,6 @@
     "top_speed_mph": 30,
     "length_cm": null,
     "height_cm": 86,
-    "skin_type": "Hair",
-    "habitat": "Grassland",
-    "group_behavior": "Troop",
-    "lifestyle": "Diurnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Olive_baboon_Ngorongoro.jpg/330px-Olive_baboon_Ngorongoro.jpg"
   },
   {
@@ -337,11 +227,6 @@
     "top_speed_mph": 25,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Dense and coastal tropical forests",
-    "group_behavior": null,
-    "lifestyle": "Troop",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Mandrill_Albert_September_2015_Zoo_Berlin_%282%29.jpg/330px-Mandrill_Albert_September_2015_Zoo_Berlin_%282%29.jpg"
   },
   {
@@ -352,11 +237,6 @@
     "top_speed_mph": 15,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Woodland areas close to water",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Raccoon_in_Central_Park_%2835264%29.jpg/330px-Raccoon_in_Central_Park_%2835264%29.jpg"
   },
   {
@@ -367,11 +247,6 @@
     "top_speed_mph": 7,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "River banks",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Fischotter%2C_Lutra_Lutra.JPG/330px-Fischotter%2C_Lutra_Lutra.JPG"
   },
   {
@@ -382,11 +257,6 @@
     "top_speed_mph": 15,
     "length_cm": 38,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Forest and open woodland",
-    "group_behavior": "Solitary",
-    "lifestyle": "Diurnal/Nocturnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Mustela_nivalis_-British_Wildlife_Centre-4.jpg/330px-Mustela_nivalis_-British_Wildlife_Centre-4.jpg"
   },
   {
@@ -397,11 +267,6 @@
     "top_speed_mph": 18,
     "length_cm": 75,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Woodland and hedgerows",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Badger_laying_on_ground._-_DPLA_-_0335977b4d1504edc799834081ca4fd5.jpg/330px-Badger_laying_on_ground._-_DPLA_-_0335977b4d1504edc799834081ca4fd5.jpg"
   },
   {
@@ -412,11 +277,6 @@
     "top_speed_mph": 10,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Open woodland and dense shrub",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Striped_Skunk.jpg/330px-Striped_Skunk.jpg"
   },
   {
@@ -427,11 +287,6 @@
     "top_speed_mph": 20,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Hair",
-    "habitat": "Forest areas close to the Arctic tundra",
-    "group_behavior": null,
-    "lifestyle": "Herd",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Alaska_moose.jpg/330px-Alaska_moose.jpg"
   },
   {
@@ -442,11 +297,6 @@
     "top_speed_mph": 43,
     "length_cm": null,
     "height_cm": 105,
-    "skin_type": "Fur",
-    "habitat": "Dense forest and planted areas",
-    "group_behavior": null,
-    "lifestyle": "Herd",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Family_Cervidae_five_species.jpg/330px-Family_Cervidae_five_species.jpg"
   },
   {
@@ -457,11 +307,6 @@
     "top_speed_mph": 40,
     "length_cm": 270,
     "height_cm": 150,
-    "skin_type": "Hair",
-    "habitat": "Mountain meadows",
-    "group_behavior": "Herd",
-    "lifestyle": null,
-    "animal_type": "Cervid",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Jasper.Wapiti-Hirsch.P1033401.jpg/330px-Jasper.Wapiti-Hirsch.P1033401.jpg"
   },
   {
@@ -472,11 +317,6 @@
     "top_speed_mph": 22,
     "length_cm": 270,
     "height_cm": null,
-    "skin_type": "Hair",
-    "habitat": "Grass plains and forest",
-    "group_behavior": null,
-    "lifestyle": "Herd",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/American_bison_k5680-1.jpg/330px-American_bison_k5680-1.jpg"
   },
   {
@@ -487,12 +327,7 @@
     "top_speed_mph": 22,
     "length_cm": 180,
     "height_cm": null,
-    "skin_type": "Hair",
-    "habitat": "Woodland and grass pastures",
-    "group_behavior": null,
-    "lifestyle": "Herd",
-    "animal_type": "Mammal",
-    "image": "https://picsum.photos/400/300?random=709"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Buffalo_sentence_1_parse_tree.svg/330px-Buffalo_sentence_1_parse_tree.svg.png"
   },
   {
     "name": "Canadian Horse",
@@ -502,11 +337,6 @@
     "top_speed_mph": null,
     "length_cm": 240,
     "height_cm": 160,
-    "skin_type": "Hair",
-    "habitat": "Farms",
-    "group_behavior": "Herd",
-    "lifestyle": null,
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Cheval_canadien_au_trot_3372.jpg"
   },
   {
@@ -517,11 +347,6 @@
     "top_speed_mph": 15,
     "length_cm": null,
     "height_cm": 130,
-    "skin_type": "Fur",
-    "habitat": "Arid forests and deserts",
-    "group_behavior": null,
-    "lifestyle": "Herd",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Donkey_in_Clovelly%2C_North_Devon%2C_England.jpg/330px-Donkey_in_Clovelly%2C_North_Devon%2C_England.jpg"
   },
   {
@@ -532,11 +357,6 @@
     "top_speed_mph": 40,
     "length_cm": null,
     "height_cm": 210,
-    "skin_type": "Fur",
-    "habitat": "Deserts close to water",
-    "group_behavior": null,
-    "lifestyle": "Herd",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Camelus_bactrianus_%2855026866188%29.jpg/330px-Camelus_bactrianus_%2855026866188%29.jpg"
   },
   {
@@ -547,11 +367,6 @@
     "top_speed_mph": 28,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Mountainous deserts and grasslands",
-    "group_behavior": null,
-    "lifestyle": "Herd",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Llamas%2C_Vernagt-Stausee%2C_Italy.jpg/330px-Llamas%2C_Vernagt-Stausee%2C_Italy.jpg"
   },
   {
@@ -562,11 +377,6 @@
     "top_speed_mph": 35,
     "length_cm": 213,
     "height_cm": 99,
-    "skin_type": "Fur",
-    "habitat": "Farms",
-    "group_behavior": "Herd",
-    "lifestyle": null,
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Alpaca_in_Higashiyama_Zoo_-_1.jpg/330px-Alpaca_in_Higashiyama_Zoo_-_1.jpg"
   },
   {
@@ -577,11 +387,6 @@
     "top_speed_mph": 30,
     "length_cm": 500,
     "height_cm": null,
-    "skin_type": "Leather",
-    "habitat": "Lakes",
-    "group_behavior": "Herd",
-    "lifestyle": "Nocturnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Portrait_Hippopotamus_in_the_water.jpg/330px-Portrait_Hippopotamus_in_the_water.jpg"
   },
   {
@@ -592,11 +397,6 @@
     "top_speed_mph": 40,
     "length_cm": 360,
     "height_cm": null,
-    "skin_type": "Leather",
-    "habitat": "Tropical bushland",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Black_Rhino_at_Working_with_Wildlife.jpg/330px-Black_Rhino_at_Working_with_Wildlife.jpg"
   },
   {
@@ -607,11 +407,6 @@
     "top_speed_mph": 30,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Hair",
-    "habitat": "Arid savannas and grass plains",
-    "group_behavior": null,
-    "lifestyle": "Group",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Southern_warthog_%28Phacochoerus_africanus_sundevallii%29_male.jpg/330px-Southern_warthog_%28Phacochoerus_africanus_sundevallii%29_male.jpg"
   },
   {
@@ -622,11 +417,6 @@
     "top_speed_mph": 30,
     "length_cm": null,
     "height_cm": 100,
-    "skin_type": "Fur",
-    "habitat": "Deciduous broad-leaf forests",
-    "group_behavior": "Sounder",
-    "lifestyle": "Nocturnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Wildschwein%2C_N%C3%A4he_Pulverstampftor_%28cropped%29.jpg/330px-Wildschwein%2C_N%C3%A4he_Pulverstampftor_%28cropped%29.jpg"
   },
   {
@@ -637,11 +427,6 @@
     "top_speed_mph": 5,
     "length_cm": 40,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Grassland and mountain slopes",
-    "group_behavior": "Herd",
-    "lifestyle": "Diurnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/George_the_amazing_guinea_pig.jpg/330px-George_the_amazing_guinea_pig.jpg"
   },
   {
@@ -652,11 +437,6 @@
     "top_speed_mph": 45,
     "length_cm": 110,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Open plains and savanna",
-    "group_behavior": "Pack",
-    "lifestyle": "Crepuscular",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/African_Wild_Dog_at_Working_with_Wildlife.jpg/330px-African_Wild_Dog_at_Working_with_Wildlife.jpg"
   },
   {
@@ -667,11 +447,6 @@
     "top_speed_mph": null,
     "length_cm": null,
     "height_cm": 50,
-    "skin_type": "Hair",
-    "habitat": null,
-    "group_behavior": null,
-    "lifestyle": null,
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/ACD-blue-spud.jpg/330px-ACD-blue-spud.jpg"
   },
   {
@@ -682,11 +457,6 @@
     "top_speed_mph": 40,
     "length_cm": 67,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Tundra and rocky areas",
-    "group_behavior": null,
-    "lifestyle": "Herd",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Arctic_Hare_1.jpg/330px-Arctic_Hare_1.jpg"
   },
   {
@@ -697,11 +467,6 @@
     "top_speed_mph": 20,
     "length_cm": 30,
     "height_cm": 5,
-    "skin_type": "Fur",
-    "habitat": "Mature woodlands",
-    "group_behavior": "Solitary",
-    "lifestyle": null,
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/EasternGraySquirrel_GAm.jpg/330px-EasternGraySquirrel_GAm.jpg"
   },
   {
@@ -712,11 +477,6 @@
     "top_speed_mph": 34,
     "length_cm": 120,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Arid forest and desert",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/330px-American_Beaver.jpg"
   },
   {
@@ -727,11 +487,6 @@
     "top_speed_mph": 2,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Spikes",
-    "habitat": "Dense forests and grassland",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Erethizon_dorsatum_-_Prince_Rupert.jpg/330px-Erethizon_dorsatum_-_Prince_Rupert.jpg"
   },
   {
@@ -742,11 +497,6 @@
     "top_speed_mph": 8,
     "length_cm": 21,
     "height_cm": null,
-    "skin_type": "Hair",
-    "habitat": "Rocky deserts and shrublands",
-    "group_behavior": "Solitary",
-    "lifestyle": null,
-    "animal_type": "rodent",
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Peromyscus_eremicus.jpg"
   },
   {
@@ -757,12 +507,7 @@
     "top_speed_mph": null,
     "length_cm": 121,
     "height_cm": null,
-    "skin_type": "Scales",
-    "habitat": "Forests",
-    "group_behavior": "Semi-socialCommunity-minded",
-    "lifestyle": "DiurnalSolitarySociableor Nocturnal Depending on Region and Season",
-    "animal_type": null,
-    "image": "https://picsum.photos/400/300?random=544"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Crotalus_cerastes_mesquite_springs_CA-2.jpg/330px-Crotalus_cerastes_mesquite_springs_CA-2.jpg"
   },
   {
     "name": "Dwarf Hamster",
@@ -772,12 +517,7 @@
     "top_speed_mph": 5,
     "length_cm": 10,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Deserts",
-    "group_behavior": "Solitary",
-    "lifestyle": null,
-    "animal_type": "mammal",
-    "image": "https://picsum.photos/400/300?random=35"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/European_hamster_%28Cricetus_cricetus%29_Meidling.jpg/330px-European_hamster_%28Cricetus_cricetus%29_Meidling.jpg"
   },
   {
     "name": "Albatross",
@@ -787,11 +527,6 @@
     "top_speed_mph": 50,
     "length_cm": 120,
     "height_cm": null,
-    "skin_type": "Feathers",
-    "habitat": "Open seas and oceans",
-    "group_behavior": "Colonial Nesting",
-    "lifestyle": null,
-    "animal_type": "Bird",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Short_tailed_Albatross1.jpg/330px-Short_tailed_Albatross1.jpg"
   },
   {
@@ -802,11 +537,6 @@
     "top_speed_mph": 12,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Spikes",
-    "habitat": "Dense vegetation and woodland",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Igel.JPG/330px-Igel.JPG"
   },
   {
@@ -817,11 +547,6 @@
     "top_speed_mph": null,
     "length_cm": 24,
     "height_cm": null,
-    "skin_type": "Scales",
-    "habitat": "Desert",
-    "group_behavior": null,
-    "lifestyle": null,
-    "animal_type": "Reptile",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Bipes_biporus1.jpg/330px-Bipes_biporus1.jpg"
   },
   {
@@ -832,11 +557,6 @@
     "top_speed_mph": 30,
     "length_cm": 75,
     "height_cm": null,
-    "skin_type": "Boney Plates",
-    "habitat": "Forest and grasslands",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Nine-banded_Armadillo.jpg/330px-Nine-banded_Armadillo.jpg"
   },
   {
@@ -847,11 +567,6 @@
     "top_speed_mph": 18,
     "length_cm": 210,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Forest and grasslands",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Tamandu%C3%A1-bandeira_no_Parque_Nacional_da_Serra_da_Canastra_%28cropped%29.jpg/330px-Tamandu%C3%A1-bandeira_no_Parque_Nacional_da_Serra_da_Canastra_%28cropped%29.jpg"
   },
   {
@@ -862,12 +577,7 @@
     "top_speed_mph": 18,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Smooth",
-    "habitat": "Large tropical rivers and estuaries",
-    "group_behavior": null,
-    "lifestyle": "School",
-    "animal_type": "Mammal",
-    "image": "https://picsum.photos/400/300?random=517"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Amazonas-Flussdelfin_Orinoko3.jpg/330px-Amazonas-Flussdelfin_Orinoko3.jpg"
   },
   {
     "name": "Baleen Whale",
@@ -877,11 +587,6 @@
     "top_speed_mph": 22,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Skin",
-    "habitat": "Warm and freezing ocean",
-    "group_behavior": "Solitary",
-    "lifestyle": null,
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mysticeti_Diversity.png/330px-Mysticeti_Diversity.png"
   },
   {
@@ -892,11 +597,6 @@
     "top_speed_mph": 15,
     "length_cm": 249,
     "height_cm": 60,
-    "skin_type": "Hair",
-    "habitat": "Ice packs and shallow water",
-    "group_behavior": "Solitary",
-    "lifestyle": null,
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Crabeater_Seal_in_Pl%C3%A9neau_Bay%2C_Antarctica_%286059168728%29.jpg/330px-Crabeater_Seal_in_Pl%C3%A9neau_Bay%2C_Antarctica_%286059168728%29.jpg"
   },
   {
@@ -907,11 +607,6 @@
     "top_speed_mph": 27,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Fur",
-    "habitat": "Coastal waters and rocky shorelines",
-    "group_behavior": null,
-    "lifestyle": "Herd",
-    "animal_type": "Mammal",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/California_sea_lion_in_La_Jolla_%2870568%29.jpg/330px-California_sea_lion_in_La_Jolla_%2870568%29.jpg"
   },
   {
@@ -922,11 +617,6 @@
     "top_speed_mph": 22,
     "length_cm": 350,
     "height_cm": null,
-    "skin_type": "Hair",
-    "habitat": "Ice floes and rocky",
-    "group_behavior": "Herd",
-    "lifestyle": "Diurnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Walrus_in_the_Russian_Arctic_National_Park%2C_Novaya_Zemlya_2015-2.jpg/330px-Walrus_in_the_Russian_Arctic_National_Park%2C_Novaya_Zemlya_2015-2.jpg"
   },
   {
@@ -937,11 +627,6 @@
     "top_speed_mph": null,
     "length_cm": 1200,
     "height_cm": null,
-    "skin_type": "Smooth",
-    "habitat": "Temperate waters along continental shelves",
-    "group_behavior": null,
-    "lifestyle": null,
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Cetorhinus_maximus_by_greg_skomal.JPG/330px-Cetorhinus_maximus_by_greg_skomal.JPG"
   },
   {
@@ -952,12 +637,7 @@
     "top_speed_mph": null,
     "length_cm": 182,
     "height_cm": null,
-    "skin_type": "Smooth",
-    "habitat": "Surface to mid-water",
-    "group_behavior": "Solitary",
-    "lifestyle": null,
-    "animal_type": "octopoda",
-    "image": "https://picsum.photos/400/300?random=81"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Pelagic_octopus_Tremoctopus.jpg/330px-Pelagic_octopus_Tremoctopus.jpg"
   },
   {
     "name": "Colossal Squid",
@@ -967,11 +647,6 @@
     "top_speed_mph": null,
     "length_cm": 1400,
     "height_cm": null,
-    "skin_type": "Skin",
-    "habitat": "ocean",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Cephalopod",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Colossalsquid.png/330px-Colossalsquid.png"
   },
   {
@@ -982,11 +657,6 @@
     "top_speed_mph": 4,
     "length_cm": 2,
     "height_cm": null,
-    "skin_type": null,
-    "habitat": null,
-    "group_behavior": "Colony",
-    "lifestyle": null,
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Olindias_formosa1.jpg/330px-Olindias_formosa1.jpg"
   },
   {
@@ -997,11 +667,6 @@
     "top_speed_mph": null,
     "length_cm": 11,
     "height_cm": null,
-    "skin_type": "Shell",
-    "habitat": "rainforest",
-    "group_behavior": "Solitary",
-    "lifestyle": null,
-    "animal_type": "crustacean",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Christmas_Island_%285774532171%29.jpg/330px-Christmas_Island_%285774532171%29.jpg"
   },
   {
@@ -1012,11 +677,6 @@
     "top_speed_mph": 12,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Shell",
-    "habitat": "Sea gardens and rocky beds",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Arthropod",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/KreeftbijDenOsse.jpg/330px-KreeftbijDenOsse.jpg"
   },
   {
@@ -1027,11 +687,6 @@
     "top_speed_mph": null,
     "length_cm": 2,
     "height_cm": null,
-    "skin_type": "Shell",
-    "habitat": "All water regions around the world",
-    "group_behavior": "School",
-    "lifestyle": null,
-    "animal_type": "Crustacean",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Palaemon_serratus_Croazia.jpg/330px-Palaemon_serratus_Croazia.jpg"
   },
   {
@@ -1042,11 +697,6 @@
     "top_speed_mph": 0,
     "length_cm": null,
     "height_cm": null,
-    "skin_type": "Spiky",
-    "habitat": "coral reef",
-    "group_behavior": "Solitary",
-    "lifestyle": "Solitary",
-    "animal_type": "Asteroidea",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Starfish_montage.png/330px-Starfish_montage.png"
   },
   {
@@ -1057,11 +707,6 @@
     "top_speed_mph": 100,
     "length_cm": null,
     "height_cm": 96,
-    "skin_type": null,
-    "habitat": "Near forests",
-    "group_behavior": null,
-    "lifestyle": null,
-    "animal_type": "bird",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Bald_eagle_about_to_fly_in_Alaska_%282016%29.jpg/330px-Bald_eagle_about_to_fly_in_Alaska_%282016%29.jpg"
   },
   {
@@ -1072,11 +717,6 @@
     "top_speed_mph": 200,
     "length_cm": null,
     "height_cm": 40,
-    "skin_type": "Feathers",
-    "habitat": "High areas like mountains and cliffs",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Bird",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Brown-Falcon%2C-Vic%2C-3.1.2008.jpg/330px-Brown-Falcon%2C-Vic%2C-3.1.2008.jpg"
   },
   {
@@ -1087,11 +727,6 @@
     "top_speed_mph": null,
     "length_cm": 46,
     "height_cm": null,
-    "skin_type": "Feathers",
-    "habitat": "Woodlands",
-    "group_behavior": "Solitary",
-    "lifestyle": null,
-    "animal_type": "Hawk",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Accipiter_cooperii_m_Sam_Smith_Toronto3.jpg/330px-Accipiter_cooperii_m_Sam_Smith_Toronto3.jpg"
   },
   {
@@ -1102,12 +737,7 @@
     "top_speed_mph": 50,
     "length_cm": null,
     "height_cm": 45,
-    "skin_type": "Feathers",
-    "habitat": "Open plains and low-lying woodland",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Bird",
-    "image": "https://picsum.photos/400/300?random=795"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/American_Barn_Owl%2C_Bear_River%2C_Utah_%289637780911%29.jpg/330px-American_Barn_Owl%2C_Bear_River%2C_Utah_%289637780911%29.jpg"
   },
   {
     "name": "African Grey Parrot",
@@ -1117,11 +747,6 @@
     "top_speed_mph": 42,
     "length_cm": 33,
     "height_cm": null,
-    "skin_type": null,
-    "habitat": "Lowland forests",
-    "group_behavior": null,
-    "lifestyle": null,
-    "animal_type": "bird",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Perroquet_%C3%A0_Yampopo_Beach_-_Douala.jpg/330px-Perroquet_%C3%A0_Yampopo_Beach_-_Douala.jpg"
   },
   {
@@ -1132,11 +757,6 @@
     "top_speed_mph": 45,
     "length_cm": null,
     "height_cm": 75,
-    "skin_type": "Feathers",
-    "habitat": "Antarctic land and ocean",
-    "group_behavior": "Colony",
-    "lifestyle": "Diurnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Hope_Bay-2016-Trinity_Peninsula%E2%80%93Ad%C3%A9lie_penguin_%28Pygoscelis_adeliae%29_04.jpg/330px-Hope_Bay-2016-Trinity_Peninsula%E2%80%93Ad%C3%A9lie_penguin_%28Pygoscelis_adeliae%29_04.jpg"
   },
   {
@@ -1147,11 +767,6 @@
     "top_speed_mph": 31,
     "length_cm": null,
     "height_cm": 150,
-    "skin_type": "Feathers",
-    "habitat": "Large lakes and plant less lagoons",
-    "group_behavior": null,
-    "lifestyle": "Flock",
-    "animal_type": "Bird",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flamingos_Laguna_Colorada.jpg/330px-Flamingos_Laguna_Colorada.jpg"
   },
   {
@@ -1162,11 +777,6 @@
     "top_speed_mph": 10,
     "length_cm": 107,
     "height_cm": null,
-    "skin_type": "Feathers",
-    "habitat": "Desert and savanna areas",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Bird",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Peacock_Plumage.jpg/330px-Peacock_Plumage.jpg"
   },
   {
@@ -1177,11 +787,6 @@
     "top_speed_mph": 50,
     "length_cm": 150,
     "height_cm": null,
-    "skin_type": "Feathers",
-    "habitat": "Large",
-    "group_behavior": null,
-    "lifestyle": "Flock",
-    "animal_type": "Bird",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Mute_Swan_Emsworth2.JPG/330px-Mute_Swan_Emsworth2.JPG"
   },
   {
@@ -1192,11 +797,6 @@
     "top_speed_mph": 88,
     "length_cm": 50,
     "height_cm": null,
-    "skin_type": "Feathers",
-    "habitat": "Rivers",
-    "group_behavior": null,
-    "lifestyle": "Pack",
-    "animal_type": "Bird",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bucephala-albeola-010.jpg/330px-Bucephala-albeola-010.jpg"
   },
   {
@@ -1207,11 +807,6 @@
     "top_speed_mph": 6,
     "length_cm": 45,
     "height_cm": null,
-    "skin_type": "Feathers",
-    "habitat": "Open woodland and sheltered grassland",
-    "group_behavior": null,
-    "lifestyle": "Flock",
-    "animal_type": "Bird",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Male_and_female_chicken_sitting_together.jpg/330px-Male_and_female_chicken_sitting_together.jpg"
   },
   {
@@ -1222,11 +817,6 @@
     "top_speed_mph": 70,
     "length_cm": 73,
     "height_cm": 72,
-    "skin_type": "Feathers",
-    "habitat": "Open wetland areas such as rivers",
-    "group_behavior": null,
-    "lifestyle": null,
-    "animal_type": "Bird",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Egyptian_goose_%2805659%29.jpg/330px-Egyptian_goose_%2805659%29.jpg"
   },
   {
@@ -1237,11 +827,6 @@
     "top_speed_mph": 59,
     "length_cm": 50,
     "height_cm": 25,
-    "skin_type": "Feathers",
-    "habitat": "Fields",
-    "group_behavior": null,
-    "lifestyle": null,
-    "animal_type": "Bird",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Corvus_corone_-near_Canford_Cliffs%2C_Poole%2C_England-8.jpg/330px-Corvus_corone_-near_Canford_Cliffs%2C_Poole%2C_England-8.jpg"
   },
   {
@@ -1252,11 +837,6 @@
     "top_speed_mph": 40,
     "length_cm": 63,
     "height_cm": null,
-    "skin_type": "Feathers",
-    "habitat": "Open areas such as tundras",
-    "group_behavior": "Flocks",
-    "lifestyle": null,
-    "animal_type": "Bird",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Corvus_corax_ad_berlin_090516.jpg/330px-Corvus_corax_ad_berlin_090516.jpg"
   },
   {
@@ -1267,11 +847,6 @@
     "top_speed_mph": null,
     "length_cm": 201,
     "height_cm": null,
-    "skin_type": null,
-    "habitat": null,
-    "group_behavior": null,
-    "lifestyle": null,
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Zamenis_longissimus.jpg/330px-Zamenis_longissimus.jpg"
   },
   {
@@ -1282,11 +857,6 @@
     "top_speed_mph": null,
     "length_cm": 243,
     "height_cm": null,
-    "skin_type": "Scales",
-    "habitat": null,
-    "group_behavior": null,
-    "lifestyle": null,
-    "animal_type": "Reptile",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Egyptian_Cobra_Snake.jpg/330px-Egyptian_Cobra_Snake.jpg"
   },
   {
@@ -1297,11 +867,6 @@
     "top_speed_mph": null,
     "length_cm": 182,
     "height_cm": null,
-    "skin_type": null,
-    "habitat": null,
-    "group_behavior": null,
-    "lifestyle": null,
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Ball_python_lucy.JPG/330px-Ball_python_lucy.JPG"
   },
   {
@@ -1312,12 +877,7 @@
     "top_speed_mph": null,
     "length_cm": 30,
     "height_cm": null,
-    "skin_type": "Scales",
-    "habitat": "Forests",
-    "group_behavior": "Group",
-    "lifestyle": null,
-    "animal_type": "Lizards",
-    "image": "https://picsum.photos/400/300?random=235"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Agama_agama_53140442_%28cropped%29.jpg/330px-Agama_agama_53140442_%28cropped%29.jpg"
   },
   {
     "name": "Australian Gecko",
@@ -1327,12 +887,7 @@
     "top_speed_mph": null,
     "length_cm": 15,
     "height_cm": null,
-    "skin_type": "Skin",
-    "habitat": null,
-    "group_behavior": "Solitary/Group",
-    "lifestyle": null,
-    "animal_type": "Reptile",
-    "image": "https://picsum.photos/400/300?random=509"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Gekko_gecko_192144834.jpg/330px-Gekko_gecko_192144834.jpg"
   },
   {
     "name": "Chameleon",
@@ -1342,11 +897,6 @@
     "top_speed_mph": 21,
     "length_cm": 68,
     "height_cm": null,
-    "skin_type": "Scales",
-    "habitat": "Tropical forests and desert",
-    "group_behavior": null,
-    "lifestyle": "Solitary",
-    "animal_type": "Reptile",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Chamaeleonidae-01.jpg/330px-Chamaeleonidae-01.jpg"
   },
   {
@@ -1357,11 +907,6 @@
     "top_speed_mph": 25,
     "length_cm": 700,
     "height_cm": null,
-    "skin_type": "Plate-like scales",
-    "habitat": "Rivers",
-    "group_behavior": "Social",
-    "lifestyle": "Nocturnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Nile_crocodile_head.jpg/330px-Nile_crocodile_head.jpg"
   },
   {
@@ -1372,11 +917,6 @@
     "top_speed_mph": 15,
     "length_cm": 450,
     "height_cm": null,
-    "skin_type": "Scales",
-    "habitat": "Marsh and swampland",
-    "group_behavior": "Solitary",
-    "lifestyle": "Diurnal/Nocturnal",
-    "animal_type": null,
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Chinese%2Bamerican_alligators.png/330px-Chinese%2Bamerican_alligators.png"
   },
   {
@@ -1387,11 +927,6 @@
     "top_speed_mph": 0,
     "length_cm": 15,
     "height_cm": null,
-    "skin_type": "Hard Outer Shell",
-    "habitat": "Forests",
-    "group_behavior": "Solitary",
-    "lifestyle": null,
-    "animal_type": "Reptile",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Eastern_Box_Turtle2.jpg/330px-Eastern_Box_Turtle2.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Florida_Box_Turtle_Digon3.jpg/330px-Florida_Box_Turtle_Digon3.jpg"
   }
 ]

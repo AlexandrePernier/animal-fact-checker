@@ -1,4 +1,3 @@
-import random
 import requests
 import json
 import os
@@ -140,31 +139,66 @@ def normalize_diet(raw):
             return v
     return None
 
-def normalize_text(raw):
-    """Nettoie une valeur texte simple."""
-    if not raw:
-        return None
-    cleaned = str(raw).strip()
-    # Prend uniquement la première valeur si plusieurs séparées par virgule
-    cleaned = cleaned.split(",")[0].strip()
-    return cleaned if cleaned else None
+
 # ─────────────────────────────────────────
 # Image Wikipedia
 # ─────────────────────────────────────────
 
-def get_image(animal_name):
-    """Récupère l'image Wikipedia de l'animal."""
+HEADERS = {"User-Agent": "AnimalFactApp/1.0 (educational project)"}
+
+def get_thumbnail_from_title(page_title):
+    """Récupère le thumbnail Wikipedia d'un article par son titre."""
     try:
-        formatted_name = animal_name.replace(" ", "_")
-        url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{formatted_name}"
-        res = requests.get(url, headers={"User-Agent": "AnimalFactApp/1.0"}, timeout=5)
+        url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{page_title.replace(' ', '_')}"
+        res = requests.get(url, headers=HEADERS, timeout=5)
         if res.status_code == 200:
             data = res.json()
             if "thumbnail" in data:
                 return data["thumbnail"]["source"]
     except Exception:
         pass
-    return f"https://picsum.photos/400/300?random={random.randint(1, 1000)}"
+    return None
+
+
+def get_image(animal_name):
+    """
+    Récupère l'image Wikipedia de l'animal.
+    Stratégie :
+      1. Cherche directement par nom exact
+      2. Si pas de thumbnail, cherche via l'API de recherche Wikipedia
+      3. Si toujours rien, retourne None (pas de fallback aléatoire)
+    """
+    # Étape 1 — recherche directe par nom exact
+    image = get_thumbnail_from_title(animal_name)
+    if image:
+        return image
+
+    # Étape 2 — recherche Wikipedia pour trouver le bon titre d'article
+    try:
+        search_url = "https://en.wikipedia.org/w/api.php"
+        params = {
+            "action": "query",
+            "list": "search",
+            "srsearch": f"{animal_name} animal",
+            "format": "json",
+            "srlimit": 3  # On prend les 3 premiers résultats
+        }
+        res = requests.get(search_url, params=params, headers=HEADERS, timeout=5)
+        results = res.json().get("query", {}).get("search", [])
+
+        for result in results:
+            title = result["title"]
+            image = get_thumbnail_from_title(title)
+            if image:
+                print(f"    🔍 '{animal_name}' → found via search: '{title}'")
+                return image
+
+    except Exception:
+        pass
+
+    # Étape 3 — aucune image trouvée
+    print(f"    ⚠️  No image found for '{animal_name}'")
+    return None
 
 
 # ─────────────────────────────────────────
@@ -198,21 +232,15 @@ def process_animal(name):
     charac = animal.get("characteristics", {})
 
     normalized = {
-    "name": animal["name"],
-    "diet": normalize_diet(charac.get("diet")),
-    "lifespan_years": normalize_lifespan_years(charac.get("lifespan")),
-    "weight_kg": normalize_weight_kg(charac.get("weight")),
-    "top_speed_mph": normalize_speed_mph(charac.get("top_speed")),
-    "length_cm": normalize_length_cm(charac.get("length")),
-    "height_cm": normalize_height_cm(charac.get("height")),
-    # ← Nouveaux champs
-    "skin_type": normalize_text(charac.get("skin_type")),
-    "habitat": normalize_text(charac.get("habitat")),
-    "group_behavior": normalize_text(charac.get("group_behavior")),
-    "lifestyle": normalize_text(charac.get("lifestyle")),
-    "animal_type": normalize_text(charac.get("type")),
-    "image": get_image(animal["name"])
-}
+        "name": animal["name"],
+        "diet": normalize_diet(charac.get("diet")),
+        "lifespan_years": normalize_lifespan_years(charac.get("lifespan")),
+        "weight_kg": normalize_weight_kg(charac.get("weight")),
+        "top_speed_mph": normalize_speed_mph(charac.get("top_speed")),
+        "length_cm": normalize_length_cm(charac.get("length")),
+        "height_cm": normalize_height_cm(charac.get("height")),
+        "image": get_image(animal["name"])
+    }
 
     if not is_useful(normalized):
         print(f"  ⚠️  Skipped {name} (not enough data)")
@@ -240,6 +268,9 @@ def main():
     if skipped:
         print(f"⚠️  Skipped: {', '.join(skipped)}")
 
+    no_image = [a["name"] for a in animals_data if not a.get("image")]
+    if no_image:
+        print(f"🖼️  No image found for: {', '.join(no_image)}")
 
 if __name__ == "__main__":
     main()
