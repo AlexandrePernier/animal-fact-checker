@@ -53,6 +53,37 @@ with open("animals.json") as f:
     animal_cache = json.load(f)
     logger.info(f"Loaded {len(animal_cache)} animals from cache")
 
+# Chargement des traductions
+with open("static/locales/en.json", encoding="utf-8") as f:
+    translations_en = json.load(f)
+with open("static/locales/fr.json", encoding="utf-8") as f:
+    translations_fr = json.load(f)
+
+def get_translations():
+    lang = request.headers.get("Accept-Language", "en")[:2]
+    return translations_fr if lang == "fr" else translations_en
+
+def tr_value(trans, value):
+    """Traduit une valeur (diet, habitat...) selon la langue."""
+    return trans["values"].get(value, value)
+
+def tr_animal(trans, name):
+    """Traduit un nom d'animal."""
+    return trans["animals"].get(name, name)
+
+def tr_label(trans, field):
+    clean = field.replace("_years","").replace("_mph","").replace("_cm","").replace("_kg","")
+    entry = trans["questions"].get(clean, {})
+    if isinstance(entry, dict):
+        return entry.get("text", clean), entry.get("gender", "f")
+    return entry, "f"
+
+def get_preposition(animal_name):
+    voyelles = "AEIOUÀÂÄÉÈÊËÎÏÔÙÛÜŒaeiouàâäéèêëîïôùûüœ"
+    if animal_name[0] in voyelles:
+        return "de l'"
+    return "du "
+
 # Champs exploitables et leurs unités d'affichage
 FIELD_CONFIG = {
     "diet":           {"label": "diet",         "unit": "", "type": "text",
@@ -103,14 +134,11 @@ def modify_value(field, real_value):
 def index():
     return render_template("index.html")
 
-
 @app.route("/question")
 @limiter.limit("60 per minute")
 def question():
-    # Dépile le prochain animal depuis la queue
     queue = session.get("queue", [])
     if not queue:
-        # Queue épuisée : on la recharge et mélange à nouveau
         queue = list(range(len(animal_cache)))
         random.shuffle(queue)
 
@@ -119,9 +147,9 @@ def question():
     animal = animal_cache[index]
 
     possible = [
-            field for field in FIELD_CONFIG
-            if animal.get(field) is not None
-        ]
+        field for field in FIELD_CONFIG
+        if animal.get(field) is not None
+    ]
 
     if not possible:
         logger.warning(f"Animal '{animal.get('name')}' has no usable fields")
@@ -131,31 +159,50 @@ def question():
     config = FIELD_CONFIG[field]
     real_value = animal[field]
     is_true = random.choice([True, False])
-    
+
     # Conversion mph → km/h pour l'affichage
     if field == "top_speed_mph":
         real_value = int(real_value * 1.60934)
 
     if config["type"] == "text":
         display = real_value if is_true else modify_value(field, real_value)
-        question_text = f"Is the {config['label']} of the {animal['name']} {display}?"
     else:
         display = real_value if is_true else modify_value(field, real_value)
-        unit = config["unit"]
-        question_text = f"Is the max {config['label']} of the {animal['name']} {display} {unit}?".strip()
+
+# ── Traductions ──────────────────────────────
+    trans = get_translations()
+    lang = request.headers.get("Accept-Language", "en")[:2]
+    animal_name = tr_animal(trans, animal["name"])
+    label, gender = tr_label(trans, field)
+    verb = "est-il" if gender == "m" else "est-elle"
+
+    if lang == "fr":
+        prep = get_preposition(animal_name)
+        if config["type"] == "text":
+            display_translated = tr_value(trans, str(display))
+            question_text = f"{label} {prep}{animal_name} est-il \"{display_translated}\" ?"
+        else:
+            question_text = f"{label} {prep}{animal_name} {verb} {display} {config['unit']} ?"
+    else:
+        if config["type"] == "text":
+            display_translated = tr_value(trans, str(display))
+            question_text = f"{label} of the {animal_name} {display_translated}?"
+        else:
+            question_text = f"{label} of the {animal_name} {display} {config['unit']}?"
 
     session["correct_answer"] = is_true
-    session["real_value"] = f"{real_value} {config['unit']}".strip()
+    session["real_value"] = f"{tr_value(trans, str(real_value))} {config['unit']}".strip() \
+        if config["type"] == "text" else f"{real_value} {config['unit']}".strip()
+    # ─────────────────────────────────────────────
 
     logger.info(f"Question — '{animal['name']}' / {field}")
 
     return jsonify({
         "question": question_text,
         "real": session["real_value"],
-        "display": str(display),
+        "display": str(display_translated if config["type"] == "text" else display),
         "image": animal.get("image")
     })
-
 
 @app.route("/submit_score", methods=["POST"])
 @limiter.limit("10 per minute")

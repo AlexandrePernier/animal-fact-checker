@@ -6,8 +6,10 @@ export async function startGameAPI(username) {
     });
 }
 
-export async function getQuestionAPI() {
-    const res = await fetch("/question");
+export async function getQuestionAPI(lang = "en") {
+    const res = await fetch("/question", {
+        headers: { "Accept-Language": lang }
+    });
     return res.json();
 }
 

@@ -1,9 +1,11 @@
+import { t, tAnimal } from "./i18n.js";
+
 export function showScreen(id) {
     ["start-screen", "game", "game-over", "leaderboard-screen"]
         .forEach(el => {
             const element = document.getElementById(el);
             element.classList.add("hidden");
-            element.classList.remove("active"); // 🔥 reset animation
+            element.classList.remove("active");
         });
 
     const target = document.getElementById(id);
@@ -15,12 +17,12 @@ export function showScreen(id) {
 }
 
 export function updateScore(score) {
-    document.getElementById("score").innerText = "Score: " + score;
+    document.getElementById("score").innerText = `${t("ui.score")}: ${score}`;
 }
 
 export function updateStreak(streak) {
     const el = document.getElementById("streak");
-    el.innerText = "🔥 Streak: " + streak;
+    el.innerText = `${t("ui.streak")}: ${streak}`;
     el.classList.toggle("streak-active", streak >= 3);
 }
 
@@ -45,7 +47,7 @@ export function showResult(text) {
 }
 
 export function showGameOver(score) {
-    document.getElementById("final-score").innerText = "Final Score: " + score;
+    document.getElementById("final-score").innerText = `${t("ui.final_score")}: ${score}`;
 }
 
 export function renderLeaderboard(data) {
@@ -54,7 +56,6 @@ export function renderLeaderboard(data) {
 
     data.top10.forEach((entry, index) => {
         const medal = ["🥇", "🥈", "🥉"][index] || `#${index + 1}`;
-
         container.innerHTML += `
         <div class="leaderboard-item">
             <div>${medal}</div>
@@ -63,7 +64,6 @@ export function renderLeaderboard(data) {
         </div>`;
     });
 }
-
 
 export function startTimer(duration, onEnd) {
     const bar = document.getElementById("timer-bar");
@@ -81,9 +81,7 @@ export function startTimer(duration, onEnd) {
 
 export function flashCard(isCorrect) {
     const card = document.getElementById("card");
-
     card.classList.remove("correct", "wrong");
-
     if (isCorrect) {
         card.classList.add("correct");
     } else {
@@ -99,4 +97,20 @@ export function resetCard() {
 export function setButtons(enabled) {
     document.getElementById("trueBtn").disabled = !enabled;
     document.getElementById("falseBtn").disabled = !enabled;
+}
+
+/**
+ * Rafraîchit les labels de score/streak après un changement de langue.
+ */
+export function refreshScoreLabels() {
+    const scoreEl = document.getElementById("score");
+    const streakEl = document.getElementById("streak");
+    if (scoreEl) {
+        const val = scoreEl.innerText.split(": ")[1] ?? "0";
+        scoreEl.innerText = `${t("ui.score")}: ${val}`;
+    }
+    if (streakEl) {
+        const val = streakEl.innerText.split(": ")[1] ?? "0";
+        streakEl.innerText = `${t("ui.streak")}: ${val}`;
+    }
 }

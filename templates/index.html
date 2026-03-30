@@ -5,20 +5,40 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animal Fact Checker</title>
     <link rel="stylesheet" href="/static/css/main.css">
+    <style>
+        #lang-btn {
+            position: fixed;
+            top: 12px;
+            right: 16px;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.2s;
+        }
+
+        #lang-btn:hover {
+            transform: scale(1.2);
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- BOUTON LANGUE -->
+    <button id="lang-btn" title="Switch language">🇫🇷</button>
+
     <!-- START SCREEN -->
     <div id="start-screen">
-        <h1>🦁 Animal Fact Checker</h1>
-        <button id="start-btn">Start Game</button>
-        <button id="leaderboard-btn">Leaderboard</button>
+        <h1 data-i18n="ui.title">🦁 Animal Fact Checker</h1>
+        <button id="start-btn" data-i18n="ui.start">Start Game</button>
+        <button id="leaderboard-btn" data-i18n="ui.leaderboard">Leaderboard</button>
     </div>
 
     <!-- GAME -->
     <div class="game-container hidden" id="game">
-        <h1 class="title">🦁 Animal Fact Checker</h1>
+        <h1 class="title" data-i18n="ui.title">🦁 Animal Fact Checker</h1>
 
         <div class="card" id="card">
             <img id="animal-img" src="" alt="">
@@ -30,8 +50,8 @@
         </div>
 
         <div class="buttons">
-            <button id="trueBtn" class="btn true">TRUE</button>
-            <button id="falseBtn" class="btn false">FALSE</button>
+            <button id="trueBtn" class="btn true" data-i18n="ui.true">TRUE</button>
+            <button id="falseBtn" class="btn false" data-i18n="ui.false">FALSE</button>
         </div>
 
         <p id="result"></p>
@@ -45,17 +65,17 @@
 
     <!-- GAME OVER -->
     <div id="game-over" class="hidden">
-        <h2>💀 Game Over</h2>
+        <h2 data-i18n="ui.game_over">💀 Game Over</h2>
         <p id="final-score"></p>
-        <button id="restart-btn" class="btn">Restart</button>
-        <button id="view-leaderboard-btn" class="btn">View Leaderboard</button>
+        <button id="restart-btn" class="btn" data-i18n="ui.restart">Restart</button>
+        <button id="view-leaderboard-btn" class="btn" data-i18n="ui.view_leaderboard">View Leaderboard</button>
     </div>
 
     <!-- LEADERBOARD -->
     <div id="leaderboard-screen" class="hidden">
-        <h2>🏆 Leaderboard</h2>
+        <h2 data-i18n="ui.leaderboard_title">🏆 Leaderboard</h2>
         <div id="leaderboard-list" class="leaderboard"></div>
-        <button id="back-btn" class="btn">Back</button>
+        <button id="back-btn" class="btn" data-i18n="ui.back">Back</button>
     </div>
 
     <script type="module" src="/static/js/main.js"></script>
