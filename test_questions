@@ -1,0 +1,90 @@
+# test_questions.py
+import json
+import random
+import re
+
+# Charge les données
+with open("animals.json", encoding="utf-8") as f:
+    animals = json.load(f)
+
+with open("static/locales/fr.json", encoding="utf-8") as f:
+    trans = json.load(f)
+
+FIELD_CONFIG = {
+    "diet":           {"label": "diet",      "unit": "",      "type": "text"},
+    "lifespan_years": {"label": "lifespan",  "unit": "ans",   "type": "number"},
+    "weight_kg":      {"label": "weight",    "unit": "kg",    "type": "number"},
+    "top_speed_mph":  {"label": "top_speed", "unit": "km/h",  "type": "number"},
+    "length_cm":      {"label": "length",    "unit": "cm",    "type": "number"},
+    "height_cm":      {"label": "height",    "unit": "cm",    "type": "number"},
+}
+
+def tr_value(value):
+    return trans["values"].get(str(value), str(value))
+
+def tr_animal(name):
+    return trans["animals"].get(name, name)
+
+def modify_value(field, real_value):
+    if FIELD_CONFIG[field]["type"] == "text":
+        options = [v for v in ["Carnivore","Herbivore","Omnivore","Insectivore"] if v != real_value]
+        return random.choice(options)
+    factor = random.choice([random.uniform(0.4, 0.75), random.uniform(1.3, 2.0)])
+    return max(1, int(real_value * factor))
+
+def tr_label(field):
+    clean = field.replace("_years","").replace("_mph","").replace("_cm","").replace("_kg","")
+    entry = trans["questions"].get(clean, {})
+    if isinstance(entry, dict):
+        return entry.get("text", clean), entry.get("gender", "f")
+    return entry, "f"
+
+def get_preposition(animal_name):
+    voyelles = "AEIOUÀÂÄÉÈÊËÎÏÔÙÛÜŒaeiouàâäéèêëîïôùûüœ"
+    if animal_name[0] in voyelles:
+        return "de l'"
+    return "du "
+
+def generate_question(animal):
+    possible = [f for f in FIELD_CONFIG if animal.get(f) is not None]
+    if not possible:
+        return None
+
+    field = random.choice(possible)
+    config = FIELD_CONFIG[field]
+    real_value = animal[field]
+    is_true = random.choice([True, False])
+
+    if field == "top_speed_mph":
+        real_value = int(real_value * 1.60934)
+
+    display = real_value if is_true else modify_value(field, real_value)
+
+    animal_name = tr_animal(animal["name"])
+    label, gender = tr_label(field)
+    prep = get_preposition(animal_name)
+    verb = "est-il" if gender == "m" else "est-elle"
+
+    if config["type"] == "text":
+        display_translated = tr_value(display)
+        verb = "est-il"  # régime alimentaire toujours masculin
+        question = f"{label} {prep}{animal_name} {verb} \"{display_translated}\" ?"
+    else:
+        question = f"{label} {prep}{animal_name} {verb} {display} {config['unit']} ?"
+
+    return {
+        "question": question,
+        "answer": "VRAI" if is_true else "FAUX",
+        "real": f"{tr_value(str(real_value))} {config['unit']}".strip()
+    }
+    
+# Génère N questions
+N = 100
+print(f"{'─'*60}")
+for i in range(N):
+    animal = random.choice(animals)
+    result = generate_question(animal)
+    if result:
+        print(f"Q{i+1:02d}. {result['question']}")
+        print(f"     Réponse : {result['answer']} | Vraie valeur : {result['real']}")
+        print()

@@ -74,6 +74,21 @@
     color: white;
 }
 
+#change-username-btn {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 8px;
+    color: inherit;
+}
+
+#change-username-btn:hover {
+    opacity: 1;
+}
+
 /* Score */
 .score-box {
     margin-top: 10px;

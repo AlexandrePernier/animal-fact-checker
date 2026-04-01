@@ -17,7 +17,11 @@
         "correct": "✅ Correct !",
         "wrong": "❌ Faux ! Réponse",
         "timeout": "⏱️ Temps écoulé ! Réponse",
-        "enter_name": "Entrez votre prénom :"
+        "enter_name": "Entrez votre prénom :",
+        "confirm": "C'est parti !",
+        "change_username": "Changer de pseudo",
+        "welcome": "Bon retour",
+        "correct_answer": "✅ Correct ! La réponse était"
     },
     "questions": {
         "of_the": "du",

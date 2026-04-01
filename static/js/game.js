@@ -11,11 +11,10 @@ let state = {
 };
 
 export async function startGame() {
-    const username = prompt(t("ui.enter_name"));
+    const username = localStorage.getItem("username");
     if (!username) return;
 
     state = { score: 0, streak: 0, lives: 3, username, timer: null };
-
     await api.startGameAPI(username);
 
     ui.showScreen("game");
@@ -46,7 +45,6 @@ export async function loadQuestion() {
 
 export async function answer(choice) {
     clearTimeout(state.timer);
-
     if (state.lives <= 0) return;
 
     ui.setButtons(false);
@@ -65,7 +63,8 @@ export async function answer(choice) {
     ui.updateLives(state.lives);
 
     if (data.correct) {
-        ui.showResult(t("ui.correct"));
+        // ✅ Amélioration 2 — affiche toujours la vraie valeur
+        ui.showResult(`${t("ui.correct_answer")}: ${data.real}`);
     } else {
         if (state.lives <= 0) {
             gameOver();

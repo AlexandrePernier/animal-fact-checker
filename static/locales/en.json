@@ -17,7 +17,11 @@
         "correct": "✅ Correct!",
         "wrong": "❌ Wrong! Real",
         "timeout": "⏱️ Time's up! Real",
-        "enter_name": "Enter your name:"
+        "enter_name": "Enter your name:",
+        "confirm": "Let's go!",
+        "change_username": "Change name",
+        "welcome": "Welcome back",
+        "correct_answer": "✅ Correct! The answer was"
     },
     "questions": {
         "of_the": "of the",

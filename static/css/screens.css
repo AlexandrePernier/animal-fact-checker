@@ -38,6 +38,79 @@
     cursor: pointer;
 }
 
+/* USERNAME SCREEN */
+#username-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    color: white;
+    text-align: center;
+    z-index: 10;
+}
+
+#username-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#username-screen h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#username-screen p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+#username-input {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    outline: none;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#username-input:focus {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+#username-confirm-btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+#username-confirm-btn:hover {
+    transform: scale(1.05);
+    background: #218838;
+}
+
 /* GAME OVER */
 #game-over {
     position: fixed;
@@ -89,4 +162,20 @@
 
 #leaderboard-screen.hidden {
     display: none;
+}
+
+#lang-btn {
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+
+#lang-btn:hover {
+    transform: scale(1.2);
 }

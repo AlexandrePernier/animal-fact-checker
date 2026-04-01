@@ -1,7 +1,7 @@
 import { t, tAnimal } from "./i18n.js";
 
 export function showScreen(id) {
-    ["start-screen", "game", "game-over", "leaderboard-screen"]
+    ["start-screen", "username-screen", "game", "game-over", "leaderboard-screen"]
         .forEach(el => {
             const element = document.getElementById(el);
             element.classList.add("hidden");

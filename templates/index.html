@@ -5,23 +5,6 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animal Fact Checker</title>
     <link rel="stylesheet" href="/static/css/main.css">
-    <style>
-        #lang-btn {
-            position: fixed;
-            top: 12px;
-            right: 16px;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 1000;
-            transition: transform 0.2s;
-        }
-
-        #lang-btn:hover {
-            transform: scale(1.2);
-        }
-    </style>
 </head>
 
 <body>
@@ -29,11 +12,21 @@
     <!-- BOUTON LANGUE -->
     <button id="lang-btn" title="Switch language">🇫🇷</button>
 
-    <!-- START SCREEN -->
-    <div id="start-screen">
+    <!-- USERNAME SCREEN (premier lancement) -->
+    <div id="username-screen">
         <h1 data-i18n="ui.title">🦁 Animal Fact Checker</h1>
+        <p data-i18n="ui.enter_name">Enter your name:</p>
+        <input type="text" id="username-input" maxlength="20" autocomplete="off" />
+        <button id="username-confirm-btn" data-i18n="ui.confirm">Confirm</button>
+    </div>
+
+    <!-- START SCREEN -->
+    <div id="start-screen" class="hidden">
+        <h1 data-i18n="ui.title">🦁 Animal Fact Checker</h1>
+        <p id="welcome-msg"></p>
         <button id="start-btn" data-i18n="ui.start">Start Game</button>
         <button id="leaderboard-btn" data-i18n="ui.leaderboard">Leaderboard</button>
+        <button id="change-username-btn" data-i18n="ui.change_username">Change name</button>
     </div>
 
     <!-- GAME -->
